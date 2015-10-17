@@ -1,15 +1,13 @@
 'use strict';
 
-var readline = require('readline');
-var request = require('superagent');
-var api = 'http://localhost:1111/records';
+const readline = require('readline');
+const request = require('superagent');
+const api = 'http://localhost:1111/records';
 
-var io = readline.createInterface({
+const io = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
-var tasks = [];
 
 loop();
 
@@ -33,7 +31,7 @@ function what(next) {
 
 function time(next) {
     io.question('How long did it take? ', answer => {
-        let minutes = parseInt(answer);
+        const minutes = parseInt(answer);
 
         if (!minutes) {
             console.log('That is not a valid time.');
@@ -45,7 +43,7 @@ function time(next) {
 }
 
 function store(task, minutes) {
-    var record = {
+    const record = {
         task: task,
         minutes: minutes
     };

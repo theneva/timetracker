@@ -1,23 +1,21 @@
 'use strict';
 
-var morgan = require('morgan');
-var express = require('express');
-var app = express();
-var port = 1111;
+const morgan = require('morgan');
+const db = require('mongoose');
+const express = require('express');
+const app = express();
+const port = 1111;
 
 app.use(require('body-parser').json());
 app.use(morgan('dev'));
 
-var db = require('mongoose');
-var mongoUrl = 'mongodb://localhost/timetracker';
+const mongoUrl = 'mongodb://localhost/timetracker';
 db.connect(mongoUrl, () => console.log('Connected', mongoUrl));
 
 const Record = db.model('Record', {
     task: String,
     minutes: Number
 });
-
-const tasks = [];
 
 app.get('/records', (req, res) => Record.find((err, records) => res.json(records)));
 
