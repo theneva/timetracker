@@ -7,6 +7,7 @@ const app = express();
 const port = 1111;
 
 app.use(require('body-parser').json());
+app.use(require('cors')());
 app.use(morgan('dev'));
 
 const mongoUrl = 'mongodb://localhost/timetracker';
