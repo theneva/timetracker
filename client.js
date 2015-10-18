@@ -56,6 +56,6 @@ function store(task, minutes) {
 
 function print() {
     request.get(api)
-        .end((err, records) => console.log('Curreent records:', records.body));
+        .end((err, records) => console.log('Current records:', records.body));
 }
 
