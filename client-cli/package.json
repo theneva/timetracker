@@ -1,0 +1,7 @@
+{
+  "name": "timetracker-client-cli",
+  "dependencies": {
+    "readline": "^1.1.0",
+    "superagent": "^1.4.0"
+  }
+}

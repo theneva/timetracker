@@ -47,7 +47,7 @@ function store(task, minutes) {
         task: task,
         minutes: minutes
     };
-    
+
     request.post(api)
         .send(record)
         .set('Content-Type', 'application/json')
