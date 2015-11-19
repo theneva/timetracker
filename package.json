@@ -1,8 +1,10 @@
 {
   "name": "timetracker",
   "scripts": {
-    "postinstall": "cd client-cli && npm install && cd ../server && npm install",
+    "prepublish": "npm run lint && npm run build",
+    "postinstall": "cd client-cli && npm install && cd ../client-react && npm install && cd ../server && npm install",
     "lint": "eslint .",
+    "build": "cd client-react && npm run build",
     "web": "node -r babel/register ./run-web.js"
   },
   "dependencies": {

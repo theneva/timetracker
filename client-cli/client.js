@@ -1,7 +1,7 @@
 import readline from 'readline';
 import request from 'superagent';
 
-const api = process.env.API_URL || 'http://localhost:8081/records';
+const api = process.env.API_URL || 'http://localhost:1111/records';
 
 const io = readline.createInterface({
   input: process.stdin,

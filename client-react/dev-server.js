@@ -7,7 +7,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.dev.js';
 import api from '../server/controllers.js';
 
-const port = 1111;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -31,5 +31,5 @@ app.listen(port, err => {
     throw new Error(err);
   }
 
-  console.log('Listening on http://localhost:3000');
+  console.log('Listening on port', port);
 });
