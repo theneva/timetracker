@@ -1,8 +1,18 @@
 {
   "name": "timetracker",
   "scripts": {
-    "postinstall": "cd client-cli && npm install && cd ../node && npm install"
+    "postinstall": "cd client-cli && npm install && cd ../server && npm install",
+    "lint": "eslint .",
+    "web": "node -r babel/register ./run-web.js"
   },
   "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.8.34",
+    "babel-core": "^5.8.34",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.9.0"
   }
 }
